@@ -42,7 +42,7 @@ public class SSPSO(int[,] dists, int iterations, int swarmSize) : PSO(dists, ite
             (newPos[newV[i]], newPos[newV[i+1]]) = (newPos[newV[i+1]], newPos[newV[i]]);
         }
 
-        // velocities[p] = calcBSSBetweenPoints(newPos, particles[p]).ToArray(); // correct but worse?
+        // velocities[p] = CalcBSSBetweenPoints(newPos, particles[p]).ToArray(); // correct but worse?
         int velSize = rand.Next(1, MAX_INITIAL_VELOCITY_LENGTH + 1); // randomize velocity
         velocities[p] = new int[2*velSize];
         for (int i = 0; i < 2 * velSize; i++) {

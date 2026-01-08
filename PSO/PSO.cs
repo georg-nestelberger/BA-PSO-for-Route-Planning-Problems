@@ -14,8 +14,8 @@ public abstract class PSO(int[,] dists, int iterations, int swarmSize) : IPSO {
         InitializeSwarm();
 
         for (currentIteration = 0; currentIteration < iterations; currentIteration++) {
-            // if (it % 100 == 0) {
-            //     Console.WriteLine("Iteration " + it + ": " + gBestFitness);
+            // if (currentIteration % 100 == 0) {
+            //     Console.WriteLine("Iteration " + currentIteration + ": " + GetBestFitness());
             // }
 
             for (int p = 0; p < swarmSize; p++) {

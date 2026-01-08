@@ -88,24 +88,6 @@ public class C3DPSO(int[,] dists, int iterations, int swarmSize, double w = 0.6,
                     edges[e.N2, 1] = e.N1;
 
                 edgesCount++;
-
-                // if (edgesCount == dim - 1) {
-                //     int? n1 = null;
-                //     int? n2 = null;
-                //     for (int i = 0; i < dim; i++) {
-                //         if (edges[i, 1] == null) {
-                //             if (n1 == null)
-                //                 n1 = i;
-                //             else
-                //                 n2 = i;
-                //         }
-                //
-                //         if (n2 != null) break;
-                //     }
-                //     edges[(int) n1, 1] = n2;
-                //     edges[(int) n2, 1] = n1;
-                //     edgesCount++;
-                // }
             }
         }
 

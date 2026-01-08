@@ -121,12 +121,7 @@ public class VTPSO(int[,] dists, int iterations, int swarmSize) : SSPSO(dists, i
             Console.WriteLine("B");
         }
 
-        // velocities[p] = calcBSSBetweenPoints(newPos, particles[p]).ToArray(); // correct but worse?
-        int velSize = rand.Next(1, MAX_INITIAL_VELOCITY_LENGTH + 1); // randomize velocity
-        velocities[p] = new int[2*velSize];
-        for (int i = 0; i < 2 * velSize; i++) {
-            velocities[p][i] = rand.Next(0, dimensions);
-        }
+        velocities[p] = CalcBSSBetweenPoints(newPos, particles[p]).ToArray();
         
         if (fitness < pBestsFitness[p]) {
             SetPBest(p, fitness);

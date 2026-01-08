@@ -90,7 +90,6 @@ public class IESTPSO(int[,] dists, int iterations, int swarmSize) : SSPSO(dists,
         particles[p] = pos.ToArray();
         fitness = EvalPosition(p);
 
-        // velocities[p] = calcBSSBetweenPoints(newPos, particles[p]).ToArray(); // correct but worse?
         int velSize = rand.Next(1, MAX_INITIAL_VELOCITY_LENGTH + 1); // randomize velocity
         velocities[p] = new int[2 * velSize];
         for (int i = 0; i < 2 * velSize; i++) {
