@@ -117,9 +117,6 @@ public class VTPSO(int[,] dists, int iterations, int swarmSize) : SSPSO(dists, i
         
         particles[p] = newPos;
         double fitness = EvalPosition(p);
-        if (Math.Abs(newFitness - fitness) > 1) {
-            Console.WriteLine("B");
-        }
 
         velocities[p] = CalcBSSBetweenPoints(newPos, particles[p]).ToArray();
         
