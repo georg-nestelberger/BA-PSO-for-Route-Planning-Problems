@@ -5,7 +5,7 @@ public class IESTPSO(int[,] dists, int iterations, int swarmSize) : SSPSO(dists,
     protected override void UpdateParticle(int p) {
         List<int> diffPB = CalcBSSBetweenPoints(pBests[p], particles[p]);
         List<int> diffGB = CalcBSSBetweenPoints(gBest, particles[p]);
-        List<int> newV = new List<int>(velocities[p]);
+        List<int> newV = new List<int>();
 
         double alpha = rand.NextDouble();
         for (int i = 0; i < diffPB.Count; i+=2) {
@@ -89,12 +89,6 @@ public class IESTPSO(int[,] dists, int iterations, int swarmSize) : SSPSO(dists,
         
         particles[p] = pos.ToArray();
         fitness = EvalPosition(p);
-
-        int velSize = rand.Next(1, MAX_INITIAL_VELOCITY_LENGTH + 1); // randomize velocity
-        velocities[p] = new int[2 * velSize];
-        for (int i = 0; i < 2 * velSize; i++) {
-            velocities[p][i] = rand.Next(0, dimensions);
-        }
         
         if (fitness < pBestsFitness[p]) {
             SetPBest(p, fitness);

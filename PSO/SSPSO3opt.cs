@@ -5,7 +5,7 @@ public class SSPSO3opt(int[,] dists, int iterations, int swarmSize) : SSPSO(dist
     protected override void UpdateParticle(int p) {
         List<int> diffPB = CalcBSSBetweenPoints(pBests[p], particles[p]);
         List<int> diffGB = CalcBSSBetweenPoints(gBest, particles[p]);
-        List<int> newV =  new List<int>(velocities[p]);
+        List<int> newV =  new List<int>();
 
         double alpha = rand.NextDouble();
         for (int i = 0; i < diffPB.Count; i+=2) {
@@ -127,12 +127,6 @@ public class SSPSO3opt(int[,] dists, int iterations, int swarmSize) : SSPSO(dist
             }
             X1.RemoveNeighbor(X2);
             X2.RemoveNeighbor(X1);
-        }
-        
-        int velSize = rand.Next(1, MAX_INITIAL_VELOCITY_LENGTH + 1); // randomize velocity
-        velocities[p] = new int[2*velSize];
-        for (int i = 0; i < 2 * velSize; i++) {
-            velocities[p][i] = rand.Next(0, dimensions);
         }
         
         particles[p] = improvedPos ?? newPos;
