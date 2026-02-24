@@ -1,7 +1,7 @@
 ﻿using PSO;
 
-const string TSP_DIR = @"D:\Schule\FH\BA\Code\TSP\";
-const string DOT_DIR = @"D:\Schule\FH\BA\Code\dot\";
+const string TSP_DIR = @"TSP\";
+const string DOT_DIR = @"..\..\..\dot\";
 
 const string problem = "berlin52";
 const int runs = 20;
